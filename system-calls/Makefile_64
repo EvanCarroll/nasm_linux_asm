@@ -1,0 +1,15 @@
+AS=nasm
+ASFLAGS=-f elf64
+
+.PHONY: clean all
+
+BINS=1_int80 3_syscall
+
+all: $(BINS)
+
+%.o : %.asm
+	$(AS) $(ASFLAGS) -o "$@" "$<"
+
+% : %.o
+	$(LD) $(LDFLAGS) -o "out/$@" "$<"
+

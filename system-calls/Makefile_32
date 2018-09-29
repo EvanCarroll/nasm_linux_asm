@@ -1,0 +1,15 @@
+AS=nasm
+ASFLAGS=-f elf32
+LDFLAGS=-m elf_i386
+
+.PHONY: clean all
+
+BINS=2_sysenter
+
+all: $(BINS)
+
+%.o : %.asm
+	$(AS) $(ASFLAGS) -o "$@" "$<"
+
+% : %.o
+	$(LD) $(LDFLAGS) -o "out/$@" "$<"
