@@ -1,4 +1,4 @@
-BITS 32
+BITS 64
 
 GLOBAL main
 EXTERN exit, puts

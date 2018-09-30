@@ -1,8 +1,7 @@
 AS=nasm
-ASFLAGS=-f elf32
-LDFLAGS_ASM=-m elf_i386 -dynamic-linker /lib/ld-linux.so.2 -lc
+ASFLAGS=-f elf64
+LDFLAGS_ASM=-dynamic-linker /lib/ld-linux.so.2 -lc
 CFLAGS+=-Wall -no-pie
-CFLAGS_32=-m32
 
 .PHONY: clean all
 
@@ -28,5 +27,5 @@ clean:
 libc_helloworld_asm_ld: libc_helloworld_asm_ld.o
 	$(LD) $(LDFLAGS_ASM) -o "out/$@" "out/$@.o"
 
-libc_helloworld_asm_gcc: libc_helloworld_asm_gcc.o
-	$(CC) $(CFLAGS) $(CFLAGS_32) -o "out/$@" "out/$@.o"
+%_gcc: libc_helloworld_asm_gcc.o
+	$(CC) $(CFLAGS) -o "out/$@" "out/$@.o"
