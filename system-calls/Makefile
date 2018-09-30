@@ -12,4 +12,4 @@ make32:
 	$(MAKE) -f ./Makefile_32
 
 clean:
-	$(RM) *.o out/*
+	$(RM) out/*
