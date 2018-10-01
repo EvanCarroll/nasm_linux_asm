@@ -1,3 +1,4 @@
+[WARNING +all]
 BITS 64
 
 GLOBAL _start

@@ -1,3 +1,4 @@
+[WARNING +all]
 BITS 32 ; NOTE: sysenter only available in 32bit mode
 
 GLOBAL _start
