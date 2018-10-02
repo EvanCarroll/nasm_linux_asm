@@ -22,7 +22,7 @@ SECTION .text:
 		ret
 	gfh:
 		ret
-	gfP:
+	gfp:
 		ret
 	
 _start:
