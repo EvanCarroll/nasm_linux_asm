@@ -1,9 +1,9 @@
-[WARNING +all]
+[WARNING all]
 BITS 32 ; NOTE: sysenter only available in 32bit mode
 
 GLOBAL _start
 
-SECTION .data
+SECTION .rodata
 
 	helloWorld: db 'Hello world!',10
 
@@ -11,6 +11,7 @@ SECTION .text
 
 _start:
 
+print_hello_world:
 	push d0             ; with sysenter, we need return loc
 	push ecx
 	push edx
@@ -24,6 +25,7 @@ _start:
 	sysenter            ; call kernel
 d0:
 
+exit:
 	push d1
 	push ecx
 	push edx
