@@ -12,7 +12,7 @@ SECTION .rodata:
 	gdd: dw "dd"
 	gdi: dw "di"
 	gdh: dw "dh"
-	gdp: dw "db"
+	gdp: dw "dp"
 
 SECTION .text:
 
