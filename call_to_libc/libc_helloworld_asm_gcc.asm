@@ -4,14 +4,14 @@ GLOBAL main
 EXTERN exit, puts
 
 SECTION .data
-	str: db "Hello World!", 12, 0
+	helloWorld: db "Hello World!", 12, 0
 
 SECTION .text
 
 main:
 
-	push str
+	mov rdi, helloWorld
 	call puts
 
-	push 42
+	mov rdi, 42
 	call exit
