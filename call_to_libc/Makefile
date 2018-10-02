@@ -1,11 +1,7 @@
 AS=nasm
 ASFLAGS=-f elf64
-#ASFLAGS=-f elf32
-#LDFLAGS=-m elf_i386
 LDFLAGS=-m elf_x86_64
-#LDFLAGS_ASM=-dynamic-linker /lib/ld-linux.so.2 -lc
-LDFLAGS_ASM=-lc -dynamic-linker /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-#LDFLAGS_ASM=-dynamic-linker /lib64/ld-linux-x86-64.so.2 -lc
+LDFLAGS_ASM=-dynamic-linker /lib64/ld-linux-x86-64.so.2 -lc
 CFLAGS+=-Wall -no-pie
 
 .PHONY: clean all
